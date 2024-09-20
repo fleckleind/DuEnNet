@@ -11,5 +11,5 @@ Please prepare an environment with python=3.7, and then use the command "pip ins
 
 
 ## References
-* [TransUnet](https://github.com/Beckschen/TransUNet)
+* [TransUNet](https://github.com/Beckschen/TransUNet)
 * [SwinTransformer](https://github.com/microsoft/Swin-Transformer)
