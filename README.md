@@ -3,7 +3,7 @@ DuEnNet: CNN and Swin Transformer Dual Encoder Network for Medial Image Segmenta
 
 
 ## Data
-The datasets [Synapse data](https://drive.google.com/drive/folders/1ACJEoTp-uqfFJ73qS3eUObQh52nGuzCd?usp=sharing) and [ACDC data](https://drive.google.com/drive/folders/1KQcrci7aKsYZi1hQoZ3T3QUtcy7b--n4?usp=drive_link) we used are provided by TransUNet's authors.
+The [Synapse Dataset](https://drive.google.com/drive/folders/1ACJEoTp-uqfFJ73qS3eUObQh52nGuzCd?usp=sharing) and [ACDC Dataset](https://drive.google.com/drive/folders/1KQcrci7aKsYZi1hQoZ3T3QUtcy7b--n4?usp=drive_link) we used are provided by TransUNet's authors.
 
 
 ## Environment
