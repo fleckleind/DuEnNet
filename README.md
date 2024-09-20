@@ -1,5 +1,5 @@
 # DuEnNet
-This repo holds the code of DuEnNet: CNN and Swin Transformer Dual Encoder Network for Medial Image Segmentation
+DuEnNet: CNN and Swin Transformer Dual Encoder Network for Medial Image Segmentation
 
 
 ## Data
