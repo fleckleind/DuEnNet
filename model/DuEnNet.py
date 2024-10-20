@@ -296,7 +296,7 @@ class SameConvDecoders(nn.Module):
 
 class DuEnNet(nn.Module):
     def __init__(self, in_chans, num_classes, conv_chan=16, trans_chan=96):
-        super(DuEnNet, self).__init__()
+        super(Net, self).__init__()
         self.in_chans = in_chans
         self.num_classes = num_classes
         self.swinEncoder = SwinEncoders(in_chans=self.in_chans)
@@ -305,17 +305,17 @@ class DuEnNet(nn.Module):
         self.decoder = SameConvDecoders()
         self.finalSkipConnect = FinalSkipConnection()
         self.up = nn.Upsample(scale_factor=2, mode='bilinear')
-        self.up_chans = [trans_chan + conv_chan * 2, (trans_chan + conv_chan * 2) // 2 + conv_chan]
-        self.up1_conv = ConvBlock(self.up_chans[0], self.up_chans[0] // 2)
-        self.up0_conv = ConvBlock(self.up_chans[1], self.up_chans[1] // 2)
-        self.output = nn.Conv2d(in_channels=self.up_chans[1] // 2, out_channels=self.num_classes, kernel_size=1,
+        self.up_chans = trans_chan + conv_chan * 2
+        self.up1_conv = ConvBlock(self.up_chans, conv_chan * 2)  # decoder-2=32
+        self.up0_conv = ConvBlock(conv_chan * 3, conv_chan)  # decoder-1=16
+        self.output = nn.Conv2d(in_channels=conv_chan, out_channels=self.num_classes, kernel_size=1,
                                 bias=False)
 
     def forward(self, x):
         B, _, H, W = x.shape
         x_trans = self.swinEncoder(x)
         # print(x_trans[0].shape, x_trans[1].shape, x_trans[2].shape, x_trans[3].shape)
-        conv1, conv2, conv3, conv4, conv5, conv6 = self.convEncoder(x)
+        conv1, conv2, conv3, conv4, conv5, conv6 = self.convEncoder(x)  
         # print(conv1.shape, conv2.shape, conv3.shape, conv4.shape)
         skip1, skip2, skip3, skip4 = self.multiSkipConnect(conv3, conv4, conv5, conv6, x_trans)
         # print(skip1.shape, skip2.shape, skip3.shape, skip4.shape)
