@@ -44,7 +44,7 @@ parser.add_argument('--model_dict_path', type=str, default='./outputs/Synapse/mo
 
 # Swin-Unet configuration(yaml
 parser.add_argument('--cfg', type=str, metavar="FILE", help='path to config file',
-                    default='/kaggle/input/swinunet/swin_tiny_patch4_window7_224_lite.yaml')
+                    default='./cfg/swin_tiny_patch4_window7_224_lite.yaml')
 parser.add_argument(
     "--opts",
     help="Modify config options by adding 'KEY VALUE' pairs. ",
