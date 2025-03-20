@@ -24,7 +24,7 @@ parser.add_argument('--list_dir', type=str, default='./data-list/lists_Synapse',
 # parser.add_argument('--data_path', type=str, help='ACDC dataset dir', default='../data-acdc')
 parser.add_argument('--output_path', type=str, default='./outputs/', help='output dir')
 parser.add_argument('--img_size', type=int, default=224, help='input size of network')
-parser.add_argument('--num_classes', type=int, default=9, help='output channel of network, synapse(4), acdc(4)')
+parser.add_argument('--num_classes', type=int, default=9, help='output channel of network, synapse(9), acdc(4)')
 # trainer arguments
 parser.add_argument('--seed', type=int, default=1234, help='random seed')
 parser.add_argument('--epochs', type=int, default=300, help='epoch number to train')
