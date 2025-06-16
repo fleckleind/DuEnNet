@@ -9,6 +9,7 @@ Please prepare an environment with python=3.7, and then use the command "pip ins
 
 ## Quantitative Results
 ### Synapse
+Synapse multi-organ segmentation dataset, contains 8 organs: aorta (Ao), gallbladder (GB), spleen (Spl), left kidney (LK), right kidney (RK), liver (Liv), pancreas (Panc), and stomach (St), with evaluation metrics Dice Similarity coefficient (DSC) and the 95th percentile Hausdorff Distance (HD95).
 
 | Methods   | DSC   | HD95  | Ao    | GB    | LK    | RK    | Liv   | Panc  | Spl   | St    |
 |:----------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
@@ -20,6 +21,7 @@ Please prepare an environment with python=3.7, and then use the command "pip ins
 | Ours      | 82.80 | 17.66 | 86.91 | 72.46 | 85.51 | 82.48 | 94.83 | 68.30 | 91.75 | 80.17 |
 
 ### ACDC
+Automated cardiac diagnosis challenge dataset, contains 3 organs: left ventricle (LV), right ventricle (RV), and myocardium (Myo).
 
 | Methods   | DSC   | HD95   | RV    | Myo   | LV    |
 |:----------|:------|:-------|:------|:------|:------|
